@@ -28,6 +28,9 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             z-index: 1000;
             padding: 1rem 0;
+            min-height: 70px;
+            display: flex;
+            align-items: center;
         }
 
         .nav-container {
@@ -37,12 +40,20 @@
             justify-content: space-between;
             align-items: center;
             padding: 0 2rem;
+            width: 100%;
         }
 
         nav ul {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 0.5rem;
+            flex-wrap: nowrap;
+            white-space: nowrap;
+        }
+
+        nav li {
+            min-width: 100px;
+            text-align: center;
         }
 
         nav a {
@@ -50,7 +61,10 @@
             color: #333;
             font-weight: 500;
             transition: color 0.3s;
-            padding: 0.5rem 1rem;
+            padding: 0.5rem 0.5rem;
+            white-space: nowrap;
+            display: inline-block;
+            width: 100%;
         }
 
         nav a:hover {
@@ -59,28 +73,38 @@
 
         /* 语言切换按钮 */
         .lang-switch {
-            display: flex;
+            display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            background: #667eea;
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: all 0.3s;
+            gap: 0;
+            color: #667eea;
+            padding: 0.5rem 0.75rem;
             font-weight: 500;
-            border: none;
+            border: 2px solid #667eea;
+            border-radius: 5px;
+            background: transparent;
             font-size: 0.9rem;
+            user-select: none;
         }
 
-        .lang-switch:hover {
-            background: #5568d3;
-            transform: translateY(-2px);
+        .lang-btn {
+            cursor: pointer;
+            transition: all 0.2s;
+            padding: 0 0.25rem;
         }
 
-        .lang-switch::before {
-            content: '🌐';
-            font-size: 1.2rem;
+        .lang-btn:hover {
+            color: #5568d3;
+        }
+
+        .lang-btn.active {
+            font-weight: 700;
+            color: #667eea;
+            text-decoration: underline;
+        }
+
+        .lang-separator {
+            color: #667eea;
+            margin: 0 0.2rem;
         }
 
         /* 英雄区域 */
@@ -353,13 +377,29 @@
             }
 
             .nav-container {
-                flex-direction: column;
-                gap: 1rem;
+                padding: 0 1rem;
             }
 
             nav ul {
-                gap: 1rem;
-                font-size: 0.9rem;
+                gap: 0.3rem;
+                font-size: 0.85rem;
+            }
+
+            nav li {
+                min-width: 70px;
+            }
+
+            nav a {
+                padding: 0.5rem 0.3rem;
+            }
+
+            .lang-switch {
+                font-size: 0.85rem;
+                padding: 0.4rem 0.6rem;
+            }
+
+            .lang-btn {
+                padding: 0 0.2rem;
             }
 
             section {
@@ -368,6 +408,37 @@
 
             section h2 {
                 font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-container {
+                flex-wrap: wrap;
+                justify-content: center;
+                padding: 0 0.5rem;
+            }
+
+            nav ul {
+                gap: 0.2rem;
+                font-size: 0.8rem;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            nav li {
+                min-width: 60px;
+            }
+
+            nav a {
+                padding: 0.4rem 0.3rem;
+            }
+
+            .lang-switch {
+                font-size: 0.8rem;
+            }
+
+            .lang-btn {
+                padding: 0 0.15rem;
             }
         }
     </style>
@@ -383,23 +454,22 @@
                 <li><a href="#skills"><span data-lang="zh">技能</span><span data-lang="en">Skills</span></a></li>
                 <li><a href="#contact"><span data-lang="zh">联系</span><span data-lang="en">Contact</span></a></li>
             </ul>
-            <button class="lang-switch" onclick="toggleLanguage()">
-                <span data-lang="zh">English</span>
-                <span data-lang="en">中文</span>
-            </button>
+            <div class="lang-switch">
+                [<span class="lang-btn active" id="lang-zh" onclick="switchToLanguage('zh')">中文</span><span class="lang-separator">/</span><span class="lang-btn" id="lang-en" onclick="switchToLanguage('en')">EN</span>]
+            </div>
         </div>
     </nav>
 
     <!-- 英雄区域 -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>
-                <span data-lang="zh">你好，我是 [你的名字]</span>
-                <span data-lang="en">Hello, I'm [Your Name]</span>
+           <h1>
+                <span data-lang="zh">你好，我是周航宇</span>
+                <span data-lang="en">Hello, I'm Hari Zhou</span>
             </h1>
             <p>
-                <span data-lang="zh">一位充满热情的 [你的职业/专业]</span>
-                <span data-lang="en">A Passionate [Your Profession]</span>
+                <span data-lang="zh">纽约大学游戏设计专业 | 纽约大学工程学院计算机双专业</span>
+                <span data-lang="en">Game Design BFA @ NYU | Double Major in Computer Science @ NYU Tandon School of Engineerring</span>
             </p>
             <a href="#projects" class="btn">
                 <span data-lang="zh">查看我的作品</span>
@@ -615,30 +685,33 @@
 
     <script>
         // 语言切换功能
-        function toggleLanguage() {
+        function switchToLanguage(lang) {
             const body = document.body;
-            const currentLang = body.classList.contains('lang-en') ? 'en' : 'zh';
-            const newLang = currentLang === 'zh' ? 'en' : 'zh';
+            const zhBtn = document.getElementById('lang-zh');
+            const enBtn = document.getElementById('lang-en');
             
-            if (newLang === 'en') {
+            if (lang === 'en') {
                 body.classList.add('lang-en');
+                zhBtn.classList.remove('active');
+                enBtn.classList.add('active');
             } else {
                 body.classList.remove('lang-en');
+                zhBtn.classList.add('active');
+                enBtn.classList.remove('active');
             }
             
             // 保存语言偏好
-            localStorage.setItem('preferred-language', newLang);
+            localStorage.setItem('preferred-language', lang);
             
             // 更新 HTML lang 属性
-            document.documentElement.lang = newLang === 'zh' ? 'zh-CN' : 'en';
+            document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
         }
 
         // 页面加载时恢复语言偏好
         window.addEventListener('DOMContentLoaded', () => {
             const savedLang = localStorage.getItem('preferred-language');
             if (savedLang === 'en') {
-                document.body.classList.add('lang-en');
-                document.documentElement.lang = 'en';
+                switchToLanguage('en');
             }
         });
 
