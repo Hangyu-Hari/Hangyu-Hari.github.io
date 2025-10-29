@@ -76,34 +76,34 @@
             display: inline-flex;
             align-items: center;
             gap: 0;
-            color: #667eea;
-            padding: 0.5rem 0.75rem;
+            color: #333;
+            padding: 0.5rem 0.5rem;
             font-weight: 500;
-            border: 2px solid #667eea;
-            border-radius: 5px;
             background: transparent;
             font-size: 0.9rem;
             user-select: none;
+            white-space: nowrap;
         }
 
         .lang-btn {
             cursor: pointer;
             transition: all 0.2s;
             padding: 0 0.25rem;
+            color: #333;
+            white-space: nowrap;
         }
 
             .lang-btn:hover {
-                color: #5568d3;
+                color: #667eea;
             }
 
             .lang-btn.active {
                 font-weight: 700;
                 color: #667eea;
-                text-decoration: underline;
             }
 
         .lang-separator {
-            color: #667eea;
+            color: #333;
             margin: 0 0.2rem;
         }
 
@@ -485,32 +485,41 @@
 
         @media (max-width: 480px) {
             .nav-container {
-                flex-wrap: wrap;
-                justify-content: center;
                 padding: 0 0.5rem;
             }
 
             nav ul {
                 gap: 0.2rem;
-                font-size: 0.8rem;
-                justify-content: center;
-                flex-wrap: wrap;
+                font-size: 0.75rem;
+                overflow-x: auto;
+                flex-shrink: 1;
+                scrollbar-width: none; /* Firefox */
+                -ms-overflow-style: none; /* IE/Edge */
             }
 
+                nav ul::-webkit-scrollbar {
+                    display: none; /* Chrome/Safari */
+                }
+
             nav li {
-                min-width: 60px;
+                min-width: 55px;
+                flex-shrink: 0;
             }
 
             nav a {
-                padding: 0.4rem 0.3rem;
+                padding: 0.4rem 0.2rem;
+                font-size: 0.75rem;
             }
 
             .lang-switch {
-                font-size: 0.8rem;
+                font-size: 0.65rem;
+                padding: 0.25rem 0.2rem;
+                flex-shrink: 0;
+                margin-left: 0.3rem;
             }
 
             .lang-btn {
-                padding: 0 0.15rem;
+                padding: 0 0.1rem;
             }
         }
     </style>
@@ -575,20 +584,6 @@
     </section>
 
     <!-- 项目展示 -->
-    <!--
-        📝 使用说明：
-
-        1. 设置项目链接：
-           将 href="#" 替换为你的项目链接
-           示例：href="https://your-game.itch.io"
-
-        2. 使用真实图片：
-           找到项目中的注释代码，取消注释并替换图片路径
-           示例：<img src="images/project1.jpg" alt="项目截图">
-
-        3. 删除测试提示：
-           不需要时删除 onclick 属性
-    -->
     <section id="projects" class="fade-in">
         <h2>
             <span data-lang="zh">我的项目</span>
@@ -609,18 +604,13 @@
                     <div class="project-image">
                         <img src="images/MagiScapes.jpg">
                     </div>
-                    <!-- 如需使用真实图片，替换上面一行为：
-                    <div class="project-image">
-                        <img src="images/project1.jpg" alt="项目截图">
-                    </div>
-                    -->
 
                     <div class="project-info">
                         <h3>
                             <span data-lang="zh">麦琪的花园</span>
                             <span data-lang="en">MagiScapes</span>
                         </h3>
-                        <p data-lang="zh">世界首款AI沙盒冒险游戏！在这里，你将从零开始建设自己的营地，并创造专属于你的AI伙伴。 每一次与伙伴的互动，都将塑造你们之间独一无二的特殊关系。即刻踏入未知的世界，享受自由探索的旅程吧~</p>
+                        <p data-lang="zh">世界首款AI沙盒冒险游戏！在这里,你将从零开始建设自己的营地，并创造专属于你的AI伙伴。 每一次与伙伴的互动，都将塑造你们之间独一无二的特殊关系。即刻踏入未知的世界，享受自由探索的旅程吧~</p>
                         <p data-lang="en">The world's first AI sandbox adventure game! Build your camp, create AI companions, and form unique bonds through interactions. Embark on a journey of discovery and enjoy the freedom to explore!</p>
                         <div class="project-tags">
                             <span class="tag">AI</span>
@@ -646,11 +636,6 @@
                     <div class="project-image">
                         <img src="images/Orpytime.png">
                     </div>
-                    <!-- 如需使用真实图片，替换上面一行为：
-                    <div class="project-image">
-                        <img src="images/project3.jpg" alt="项目截图">
-                    </div>
-                    -->
 
                     <div class="project-info">
                         <h3>
@@ -670,11 +655,6 @@
                     <div class="project-image">
                         <img src="images/Swan.png">
                     </div>
-                    <!-- 如需使用真实图片，替换上面一行为：
-                    <div class="project-image">
-                        <img src="images/project4.jpg" alt="项目截图">
-                    </div>
-                    -->
 
                     <div class="project-info">
                         <h3>
@@ -692,11 +672,6 @@
 
                 <div class="project-card no-link">
                     <div class="project-image emoji-only">🎮</div>
-                    <!-- 如需使用真实图片，替换上面一行为：
-                    <div class="project-image">
-                        <img src="images/project5.jpg" alt="项目截图">
-                    </div>
-                    -->
 
                     <div class="project-info">
                         <h3>
@@ -716,11 +691,6 @@
                     <div class="project-image">
                         <img src="images/Shifting.png">
                     </div>
-                    <!-- 如需使用真实图片，替换上面一行为：
-                    <div class="project-image">
-                        <img src="images/project5.jpg" alt="项目截图">
-                    </div>
-                    -->
 
                     <div class="project-info">
                         <h3>
@@ -738,11 +708,6 @@
                     <div class="project-image">
                         <img src="images/Easontas.png">
                     </div>
-                    <!-- 如需使用真实图片，替换上面一行为：
-                    <div class="project-image">
-                        <img src="images/project5.jpg" alt="项目截图">
-                    </div>
-                    -->
 
                     <div class="project-info">
                         <h3>
@@ -761,11 +726,6 @@
                     <div class="project-image">
                         <img src="images/Chroma Clash.png">
                     </div>
-                    <!-- 如需使用真实图片，替换上面一行为：
-                    <div class="project-image">
-                        <img src="images/project5.jpg" alt="项目截图">
-                    </div>
-                    -->
 
                     <div class="project-info">
                         <h3>
@@ -798,11 +758,6 @@
                     <div class="project-image">
                         <img src="images/Fruit Battle.png">
                     </div>
-                    <!-- 如需使用真实图片，替换上面一行为：
-                    <div class="project-image">
-                        <img src="images/project6.jpg" alt="项目截图">
-                    </div>
-                    -->
 
                     <div class="project-info">
                         <h3>
@@ -822,11 +777,6 @@
                     <div class="project-image">
                         <img src="images/Rhythm Slicing.png">
                     </div>
-                    <!-- 如需使用真实图片，替换上面一行为：
-                    <div class="project-image">
-                        <img src="images/project7.jpg" alt="项目截图">
-                    </div>
-                    -->
 
                     <div class="project-info">
                         <h3>
@@ -863,11 +813,6 @@
                     <div class="project-image">
                         <img src="images/FoodDeliverySimulator.png">
                     </div>
-                    <!-- 如需使用真实图片，替换上面一行为：
-                    <div class="project-image">
-                        <img src="images/project8.jpg" alt="项目截图">
-                    </div>
-                    -->
 
                     <div class="project-info">
                         <h3>
@@ -886,11 +831,6 @@
                     <div class="project-image">
                         <img src="images/HookDash.png">
                     </div>
-                    <!-- 如需使用真实图片，替换上面一行为：
-                    <div class="project-image">
-                        <img src="images/project8.jpg" alt="项目截图">
-                    </div>
-                    -->
 
                     <div class="project-info">
                         <h3>
