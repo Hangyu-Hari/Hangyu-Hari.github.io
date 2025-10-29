@@ -67,9 +67,9 @@
             width: 100%;
         }
 
-        nav a:hover {
-            color: #667eea;
-        }
+            nav a:hover {
+                color: #667eea;
+            }
 
         /* 语言切换按钮 */
         .lang-switch {
@@ -92,15 +92,15 @@
             padding: 0 0.25rem;
         }
 
-        .lang-btn:hover {
-            color: #5568d3;
-        }
+            .lang-btn:hover {
+                color: #5568d3;
+            }
 
-        .lang-btn.active {
-            font-weight: 700;
-            color: #667eea;
-            text-decoration: underline;
-        }
+            .lang-btn.active {
+                font-weight: 700;
+                color: #667eea;
+                text-decoration: underline;
+            }
 
         .lang-separator {
             color: #667eea;
@@ -143,10 +143,10 @@
             animation: fadeInUp 1s ease 0.4s backwards;
         }
 
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        }
+            .btn:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            }
 
         /* 通用区域样式 */
         section {
@@ -155,12 +155,12 @@
             margin: 0 auto;
         }
 
-        section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            text-align: center;
-            color: #333;
-        }
+            section h2 {
+                font-size: 2.5rem;
+                margin-bottom: 3rem;
+                text-align: center;
+                color: #333;
+            }
 
         /* 关于我 */
         .about {
@@ -180,9 +180,9 @@
             margin-bottom: 4rem;
         }
 
-        .project-category:last-child {
-            margin-bottom: 0;
-        }
+            .project-category:last-child {
+                margin-bottom: 0;
+            }
 
         .category-header {
             display: flex;
@@ -208,6 +208,15 @@
             gap: 2rem;
         }
 
+        /* 实习部分单个项目居中显示 */
+        .internship-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
         .project-card {
             background: white;
             border-radius: 10px;
@@ -220,10 +229,20 @@
             cursor: pointer;
         }
 
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-        }
+            .project-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            }
+
+            /* 没有链接的项目卡片 */
+            .project-card.no-link {
+                cursor: default;
+            }
+
+                .project-card.no-link:hover {
+                    transform: none;
+                    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+                }
 
         .project-image {
             width: 100%;
@@ -238,32 +257,32 @@
             overflow: hidden;
         }
 
-        .project-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
+            .project-image img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
 
-        .project-image.emoji-only {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
+            .project-image.emoji-only {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            }
 
         .project-info {
             padding: 1.5rem;
         }
 
-        .project-info h3 {
-            margin-bottom: 0.5rem;
-            color: #667eea;
-        }
+            .project-info h3 {
+                margin-bottom: 0.5rem;
+                color: #667eea;
+            }
 
-        .project-info p {
-            color: #666;
-            margin-bottom: 1rem;
-        }
+            .project-info p {
+                color: #666;
+                margin-bottom: 1rem;
+            }
 
         .project-tags {
             display: flex;
@@ -297,26 +316,26 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
-        .skill-category h3 {
-            margin-bottom: 1rem;
-            color: #667eea;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
+            .skill-category h3 {
+                margin-bottom: 1rem;
+                color: #667eea;
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+            }
 
-        .skill-category ul {
-            list-style: none;
-        }
+            .skill-category ul {
+                list-style: none;
+            }
 
-        .skill-category li {
-            padding: 0.5rem 0;
-            border-bottom: 1px solid #e9ecef;
-        }
+            .skill-category li {
+                padding: 0.5rem 0;
+                border-bottom: 1px solid #e9ecef;
+            }
 
-        .skill-category li:last-child {
-            border-bottom: none;
-        }
+                .skill-category li:last-child {
+                    border-bottom: none;
+                }
 
         /* 联系方式 */
         .contact {
@@ -341,10 +360,10 @@
             transition: transform 0.3s, color 0.3s;
         }
 
-        .contact-link:hover {
-            transform: translateY(-5px);
-            color: #667eea;
-        }
+            .contact-link:hover {
+                transform: translateY(-5px);
+                color: #667eea;
+            }
 
         .contact-icon {
             width: 60px;
@@ -372,6 +391,7 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -384,10 +404,10 @@
             transition: opacity 0.6s, transform 0.6s;
         }
 
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+            .fade-in.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
 
         /* 语言切换 - 隐藏非当前语言 */
         [data-lang]:not([data-lang="zh"]) {
@@ -402,9 +422,9 @@
             display: block;
         }
 
-        body.lang-en [data-lang="en"].inline {
-            display: inline;
-        }
+            body.lang-en [data-lang="en"].inline {
+                display: inline;
+            }
 
         [data-lang].inline {
             display: inline;
@@ -450,9 +470,9 @@
                 padding: 3rem 1rem;
             }
 
-            section h2 {
-                font-size: 2rem;
-            }
+                section h2 {
+                    font-size: 2rem;
+                }
 
             .category-title {
                 font-size: 1.5rem;
@@ -515,7 +535,7 @@
     <!-- 英雄区域 -->
     <section id="home" class="hero">
         <div class="hero-content">
-           <h1>
+            <h1>
                 <span data-lang="zh">你好，我是周航宇</span>
                 <span data-lang="en">Hello, I'm Hari Zhou</span>
             </h1>
@@ -555,17 +575,17 @@
     </section>
 
     <!-- 项目展示 -->
-    <!-- 
+    <!--
         📝 使用说明：
-        
+
         1. 设置项目链接：
            将 href="#" 替换为你的项目链接
            示例：href="https://your-game.itch.io"
-           
+
         2. 使用真实图片：
            找到项目中的注释代码，取消注释并替换图片路径
            示例：<img src="images/project1.jpg" alt="项目截图">
-           
+
         3. 删除测试提示：
            不需要时删除 onclick 属性
     -->
@@ -575,17 +595,17 @@
             <span data-lang="en">My Projects</span>
         </h2>
 
-        <!-- 实习项目 -->
+        <!-- 工作项目 -->
         <div class="project-category">
             <div class="category-header">
                 <span class="category-icon">💼</span>
                 <h3 class="category-title">
-                    <span data-lang="zh">实习项目</span>
-                    <span data-lang="en">Internship Projects</span>
+                    <span data-lang="zh">工作项目</span>
+                    <span data-lang="en">Work Projects</span>
                 </h3>
             </div>
-            <div class="projects-grid">
-                <a href="https://autogame.ai/zh" class="project-card"; return false;">
+            <div class="internship-grid">
+                <a href="https://autogame.ai/zh" class="project-card">
                     <div class="project-image">
                         <img src="images/MagiScapes.jpg">
                     </div>
@@ -594,7 +614,7 @@
                         <img src="images/project1.jpg" alt="项目截图">
                     </div>
                     -->
-                    
+
                     <div class="project-info">
                         <h3>
                             <span data-lang="zh">麦琪的花园</span>
@@ -622,7 +642,7 @@
                 </h3>
             </div>
             <div class="projects-grid">
-                <a href="https://yuhang-fu.itch.io/orpytime" class="project-card"; return false;">
+                <a href="https://yuhang-fu.itch.io/orpytime" class="project-card">
                     <div class="project-image">
                         <img src="images/Orpytime.png">
                     </div>
@@ -631,7 +651,7 @@
                         <img src="images/project3.jpg" alt="项目截图">
                     </div>
                     -->
-                    
+
                     <div class="project-info">
                         <h3>
                             <span data-lang="zh">Orpytime</span>
@@ -646,7 +666,7 @@
                     </div>
                 </a>
 
-                <a href="https://huimingshi0111.itch.io/lament-of-swan" class="project-card"; return false;">
+                <a href="https://huimingshi0111.itch.io/lament-of-swan" class="project-card">
                     <div class="project-image">
                         <img src="images/Swan.png">
                     </div>
@@ -655,7 +675,7 @@
                         <img src="images/project4.jpg" alt="项目截图">
                     </div>
                     -->
-                    
+
                     <div class="project-info">
                         <h3>
                             <span data-lang="zh">Lament Of Swan</span>
@@ -670,29 +690,29 @@
                     </div>
                 </a>
 
-                <a href="#" class="project-card" onclick="alert('请将 # 替换为你的项目链接'); return false;">
+                <div class="project-card no-link">
                     <div class="project-image emoji-only">🎮</div>
                     <!-- 如需使用真实图片，替换上面一行为：
                     <div class="project-image">
                         <img src="images/project5.jpg" alt="项目截图">
                     </div>
                     -->
-                    
+
                     <div class="project-info">
                         <h3>
                             <span data-lang="zh">鸡不可失</span>
                             <span data-lang="en">Team Project 3</span>
                         </h3>
-                        <p data-lang="zh">俯视角3D动作解密游戏，米哈游策划大赛项目</p>
+                        <p data-lang="zh">俯视角3D动作解密游戏,米哈游策划大赛项目</p>
                         <p data-lang="en">48-hour Game Jam rapid development project, team completed full pipeline from concept design to final product.</p>
                         <div class="project-tags">
                             <span class="tag">3D Action Puzzle Game</span>
                             <span class="tag">Game Jam</span>
                         </div>
                     </div>
-                </a>
+                </div>
 
-                <a href="https://soeyzandiego.itch.io/shifting" class="project-card"; return false;">
+                <a href="https://soeyzandiego.itch.io/shifting" class="project-card">
                     <div class="project-image">
                         <img src="images/Shifting.png">
                     </div>
@@ -701,7 +721,7 @@
                         <img src="images/project5.jpg" alt="项目截图">
                     </div>
                     -->
-                    
+
                     <div class="project-info">
                         <h3>
                             <span data-lang="zh">Shifting</span>
@@ -714,7 +734,7 @@
                     </div>
                 </a>
 
-                <a href="https://j1ahee.itch.io/easontas" class="project-card"; return false;">
+                <a href="https://j1ahee.itch.io/easontas" class="project-card">
                     <div class="project-image">
                         <img src="images/Easontas.png">
                     </div>
@@ -723,7 +743,7 @@
                         <img src="images/project5.jpg" alt="项目截图">
                     </div>
                     -->
-                    
+
                     <div class="project-info">
                         <h3>
                             <span data-lang="zh">Easontas</span>
@@ -737,7 +757,7 @@
                     </div>
                 </a>
 
-                <a href="https://jw196668.itch.io/chroma-clash-celestial-tides" class="project-card"; return false;">
+                <a href="https://jw196668.itch.io/chroma-clash-celestial-tides" class="project-card">
                     <div class="project-image">
                         <img src="images/Chroma Clash.png">
                     </div>
@@ -746,7 +766,7 @@
                         <img src="images/project5.jpg" alt="项目截图">
                     </div>
                     -->
-                    
+
                     <div class="project-info">
                         <h3>
                             <span data-lang="zh">Chroma Clash</span>
@@ -760,7 +780,7 @@
                         </div>
                     </div>
                 </a>
-                
+
             </div>
         </div>
 
@@ -774,7 +794,7 @@
                 </h3>
             </div>
             <div class="projects-grid">
-                <a href="https://yoiimiiya.itch.io/action-mod" class="project-card"; return false;">
+                <a href="https://yoiimiiya.itch.io/action-mod" class="project-card">
                     <div class="project-image">
                         <img src="images/Fruit Battle.png">
                     </div>
@@ -783,7 +803,7 @@
                         <img src="images/project6.jpg" alt="项目截图">
                     </div>
                     -->
-                    
+
                     <div class="project-info">
                         <h3>
                             <span data-lang="zh">Fruit Battle</span>
@@ -798,7 +818,7 @@
                     </div>
                 </a>
 
-                <a href="https://yoiimiiya.itch.io/rhythm-slicing" class="project-card"; return false;">
+                <a href="https://yoiimiiya.itch.io/rhythm-slicing" class="project-card">
                     <div class="project-image">
                         <img src="images/Rhythm Slicing.png">
                     </div>
@@ -807,7 +827,7 @@
                         <img src="images/project7.jpg" alt="项目截图">
                     </div>
                     -->
-                    
+
                     <div class="project-info">
                         <h3>
                             <span data-lang="zh">Rhythm Slicing</span>
@@ -821,11 +841,11 @@
                     </div>
                 </a>
 
-                <a href="https://yoiimiiya.itch.io/shooting-practice" class="project-card"; return false;">
+                <a href="https://yoiimiiya.itch.io/shooting-practice" class="project-card">
                     <div class="project-image">
                         <img src="images/Shooting Practice.png">
                     </div>
-                    
+
                     <div class="project-info">
                         <h3>
                             <span data-lang="zh">VR Shooting Practice</span>
@@ -839,7 +859,7 @@
                     </div>
                 </a>
 
-                <a href="https://yoiimiiya.itch.io/food-delivery-simulator" class="project-card"; return false;">
+                <a href="https://yoiimiiya.itch.io/food-delivery-simulator" class="project-card">
                     <div class="project-image">
                         <img src="images/FoodDeliverySimulator.png">
                     </div>
@@ -848,7 +868,7 @@
                         <img src="images/project8.jpg" alt="项目截图">
                     </div>
                     -->
-                    
+
                     <div class="project-info">
                         <h3>
                             <span data-lang="zh">外卖小哥模拟器 1.0</span>
@@ -862,7 +882,7 @@
                     </div>
                 </a>
 
-                <a href="https://yoiimiiya.itch.io/hookdash-prototype" class="project-card"; return false;">
+                <a href="https://yoiimiiya.itch.io/hookdash-prototype" class="project-card">
                     <div class="project-image">
                         <img src="images/HookDash.png">
                     </div>
@@ -871,7 +891,7 @@
                         <img src="images/project8.jpg" alt="项目截图">
                     </div>
                     -->
-                    
+
                     <div class="project-info">
                         <h3>
                             <span data-lang="zh">HookDash Prototype</span>
@@ -978,7 +998,7 @@
             const body = document.body;
             const zhBtn = document.getElementById('lang-zh');
             const enBtn = document.getElementById('lang-en');
-            
+
             if (lang === 'en') {
                 body.classList.add('lang-en');
                 zhBtn.classList.remove('active');
@@ -988,10 +1008,10 @@
                 zhBtn.classList.add('active');
                 enBtn.classList.remove('active');
             }
-            
+
             // 保存语言偏好
             localStorage.setItem('preferred-language', lang);
-            
+
             // 更新 HTML lang 属性
             document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
         }
