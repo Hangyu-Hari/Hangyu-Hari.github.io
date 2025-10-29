@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>周航宇的作品集 | Hangyu's Portfolio</title>
+    <title>周航宇的作品集</title>
     <style>
         * {
             margin: 0;
@@ -943,10 +943,14 @@
                 body.classList.add('lang-en');
                 zhBtn.classList.remove('active');
                 enBtn.classList.add('active');
+                // 切换标签页标题为英文
+                document.title = "Hari Zhou's Portfolio";
             } else {
                 body.classList.remove('lang-en');
                 zhBtn.classList.add('active');
                 enBtn.classList.remove('active');
+                // 切换标签页标题为中文
+                document.title = "周航宇的作品集";
             }
 
             // 保存语言偏好
