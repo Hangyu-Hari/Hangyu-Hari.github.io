@@ -214,6 +214,9 @@
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
             cursor: pointer;
         }
 
@@ -231,6 +234,21 @@
             justify-content: center;
             color: white;
             font-size: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .project-image.emoji-only {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
 
         .project-info {
@@ -538,6 +556,20 @@
     </section>
 
     <!-- 项目展示 -->
+    <!-- 
+        📝 使用说明：
+        
+        1. 设置项目链接：
+           将 href="#" 替换为你的项目链接
+           示例：href="https://your-game.itch.io"
+           
+        2. 使用真实图片：
+           找到项目中的注释代码，取消注释并替换图片路径
+           示例：<img src="images/project1.jpg" alt="项目截图">
+           
+        3. 删除测试提示：
+           不需要时删除 onclick 属性
+    -->
     <section id="projects" class="fade-in">
         <h2>
             <span data-lang="zh">我的项目</span>
@@ -554,14 +586,20 @@
                 </h3>
             </div>
             <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">🏢</div>
+                <a href="#" class="project-card" onclick="alert('请将 # 替换为你的项目链接'); return false;">
+                    <div class="project-image emoji-only">🎮</div>
+                    <!-- 如需使用真实图片，替换上面一行为：
+                    <div class="project-image">
+                        <img src="images/project1.jpg" alt="项目截图">
+                    </div>
+                    -->
+                    
                     <div class="project-info">
                         <h3>
                             <span data-lang="zh">麦琪的花园</span>
                             <span data-lang="en">Internship Project 1</span>
                         </h3>
-                        <p data-lang="zh"> • 负责以HTN为核心的AI NPC行为系统策划与规则逻辑设计，涉及NPC属性、记忆等模块的系统策划。 
+                        <p data-lang="zh">• 负责以HTN为核心的AI NPC行为系统策划与规则逻辑设计，涉及NPC属性、记忆等模块的系统策划。 
 • 修改并测试提示词以及相关生成内容的合理性，涉及NPC对话、任务和图像生成结果。通过大语言模型
 构建个性化、高情绪价值供给的游戏NPC，有效组织NPC记忆，精准模仿特定动漫或电视角色的语气和
 知识 
@@ -570,12 +608,35 @@
 伴沟通协作，拓展游戏发行与推广机会</p>
                         <p data-lang="en">Developed during company internship, responsible for designing and implementing core features, optimizing system performance and improving user experience.</p>
                         <div class="project-tags">
-                            <span class="tag">Unreal Engine</span>
-                            <span class="tag">AI</span>
-                            <span class="tag">Game System Design</span>
+                            <span class="tag">Unity</span>
+                            <span class="tag">C#</span>
+                            <span class="tag">Game Design</span>
                         </div>
                     </div>
-                </div>
+                </a>
+
+                <a href="#" class="project-card" onclick="alert('请将 # 替换为你的项目链接'); return false;">
+                    <div class="project-image emoji-only">🎮</div>
+                    <!-- 如需使用真实图片，替换上面一行为：
+                    <div class="project-image">
+                        <img src="images/project2.jpg" alt="项目截图">
+                    </div>
+                    -->
+                    
+                    <div class="project-info">
+                        <h3>
+                            <span data-lang="zh">实习项目 2</span>
+                            <span data-lang="en">Internship Project 2</span>
+                        </h3>
+                        <p data-lang="zh">参与商业游戏项目开发，协助完成游戏玩法系统设计，参与多次迭代优化，提升了游戏可玩性。</p>
+                        <p data-lang="en">Participated in commercial game development, assisted in gameplay system design, contributed to multiple iterations to enhance playability.</p>
+                        <div class="project-tags">
+                            <span class="tag">Unreal Engine</span>
+                            <span class="tag">Blueprint</span>
+                            <span class="tag">Level Design</span>
+                        </div>
+                    </div>
+                </a>
             </div>
         </div>
 
@@ -589,8 +650,14 @@
                 </h3>
             </div>
             <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">🎲</div>
+                <a href="#" class="project-card" onclick="alert('请将 # 替换为你的项目链接'); return false;">
+                    <div class="project-image emoji-only">🎮</div>
+                    <!-- 如需使用真实图片，替换上面一行为：
+                    <div class="project-image">
+                        <img src="images/project3.jpg" alt="项目截图">
+                    </div>
+                    -->
+                    
                     <div class="project-info">
                         <h3>
                             <span data-lang="zh">团队项目 1</span>
@@ -604,10 +671,16 @@
                             <span class="tag">Networking</span>
                         </div>
                     </div>
-                </div>
+                </a>
 
-                <div class="project-card">
-                    <div class="project-image">🌟</div>
+                <a href="#" class="project-card" onclick="alert('请将 # 替换为你的项目链接'); return false;">
+                    <div class="project-image emoji-only">🎮</div>
+                    <!-- 如需使用真实图片，替换上面一行为：
+                    <div class="project-image">
+                        <img src="images/project4.jpg" alt="项目截图">
+                    </div>
+                    -->
+                    
                     <div class="project-info">
                         <h3>
                             <span data-lang="zh">团队项目 2</span>
@@ -621,10 +694,16 @@
                             <span class="tag">Interactive Art</span>
                         </div>
                     </div>
-                </div>
+                </a>
 
-                <div class="project-card">
-                    <div class="project-image">🚀</div>
+                <a href="#" class="project-card" onclick="alert('请将 # 替换为你的项目链接'); return false;">
+                    <div class="project-image emoji-only">🎮</div>
+                    <!-- 如需使用真实图片，替换上面一行为：
+                    <div class="project-image">
+                        <img src="images/project5.jpg" alt="项目截图">
+                    </div>
+                    -->
+                    
                     <div class="project-info">
                         <h3>
                             <span data-lang="zh">团队项目 3</span>
@@ -638,7 +717,7 @@
                             <span class="tag">2D Game</span>
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
 
@@ -652,8 +731,14 @@
                 </h3>
             </div>
             <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">🎨</div>
+                <a href="#" class="project-card" onclick="alert('请将 # 替换为你的项目链接'); return false;">
+                    <div class="project-image emoji-only">🎮</div>
+                    <!-- 如需使用真实图片，替换上面一行为：
+                    <div class="project-image">
+                        <img src="images/project6.jpg" alt="项目截图">
+                    </div>
+                    -->
+                    
                     <div class="project-info">
                         <h3>
                             <span data-lang="zh">个人项目 1</span>
@@ -667,10 +752,16 @@
                             <span class="tag">Indie Game</span>
                         </div>
                     </div>
-                </div>
+                </a>
 
-                <div class="project-card">
-                    <div class="project-image">💡</div>
+                <a href="#" class="project-card" onclick="alert('请将 # 替换为你的项目链接'); return false;">
+                    <div class="project-image emoji-only">🎮</div>
+                    <!-- 如需使用真实图片，替换上面一行为：
+                    <div class="project-image">
+                        <img src="images/project7.jpg" alt="项目截图">
+                    </div>
+                    -->
+                    
                     <div class="project-info">
                         <h3>
                             <span data-lang="zh">个人项目 2</span>
@@ -684,10 +775,16 @@
                             <span class="tag">Solo Dev</span>
                         </div>
                     </div>
-                </div>
+                </a>
 
-                <div class="project-card">
-                    <div class="project-image">🔧</div>
+                <a href="#" class="project-card" onclick="alert('请将 # 替换为你的项目链接'); return false;">
+                    <div class="project-image emoji-only">🎮</div>
+                    <!-- 如需使用真实图片，替换上面一行为：
+                    <div class="project-image">
+                        <img src="images/project8.jpg" alt="项目截图">
+                    </div>
+                    -->
+                    
                     <div class="project-info">
                         <h3>
                             <span data-lang="zh">个人项目 3</span>
@@ -701,7 +798,7 @@
                             <span class="tag">Tools</span>
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     </section>
